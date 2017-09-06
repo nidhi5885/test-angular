@@ -75,7 +75,8 @@ export class HomeComponent implements OnInit {
    
    hello()
    {
-     alert("hello world")
+     alert("hello world");
+     alert("hello Nidhi")
    }
     
 
