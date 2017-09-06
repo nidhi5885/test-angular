@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+<span style="display:inline-block; width: 150px;text-align:Center"><b>Employee Code</b></span> 
+<span style="display:inline-block; width: 150px;text-align:Center"><b>Employee Name </b></span>
+<span style="display:inline-block; width: 150px; text-align:Center;"><b>Contact No.</b></span> 
+<br>
+<li *ngFor="let emp of employees">
+  <span style="display:inline-block; width: 150px;">{{emp.id}}</span> 
+  <span style="display:inline-block; width: 150px;">{{emp.name}} </span>
+  <span style="display:inline-block; width: 150px;">{{emp.contact}}</span> 
+  <input type="button" value="edit" (click)="editContact(emp)">
+</li>
+
+<input type="button" value="Add" (click)="addContact()">
+
+<div *ngIf  ="openAdd">
+    <input  [(ngModel)]="id" name="id" value="id"/>
+    <input  [(ngModel)]="name" name="name" value="name"/>
+    <input  [(ngModel)]="contct" name="contct" value="contct"/>
+    <input type="button" value="Save" (click)="saveContact()">
+</div>
+<div *ngIf  ="openEdit">
+   <input type="text" [(ngModel)]="conts.id" name="id" value="{{conts.id}}"/>
+  <input type="text" [(ngModel)]="conts.name" name="name" value="{{conts.name}}"/>
+  <input type="text" [(ngModel)]="conts.contact" name="contct" value="{{conts.contact}}"/>
+  <input type="button" value="Saveuyu" (click)="saveEditContact(conts)">
+</div>
+
